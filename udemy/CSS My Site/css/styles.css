@@ -1,0 +1,71 @@
+body{
+    margin: 0;
+    text-align: center;
+    background-color: #EAF6F6;
+}
+
+div{
+    position: relative;
+    text-align: center;
+}
+ 
+#TopCloud{
+    position: relative;
+    left: 200px;
+    top: 25px;
+}
+
+h1{
+    color: #66BFBF;
+    font-family: 'Brush Script MT', cursive;
+}
+
+h2{
+    color: #66BFBF;
+    font-weight: normal;
+    padding-bottom: 10px;
+}
+
+p{
+    line-height: 2;
+}
+
+hr{
+    width: 5%;
+    border: dotted;
+    border-bottom: none;
+}
+
+#botttomCloud{
+    position: absolute;
+}
+
+.skill-row
+{
+    width: 50%;
+    margin: 0 auto;
+    text-align: left;
+    border: solid 2px;
+}
+
+.middle-container{
+    background-color: white;
+    padding: 100px 0;
+}
+
+.chilliImg{
+    width: 20%;
+    float: left;
+    margin-right: 30px;
+}
+
+.intro{
+    width: 30%;
+    margin: auto;
+}
+
+.ComputerImg{
+    width: 20%;
+    float: right;
+    margin-right: 30px;
+}

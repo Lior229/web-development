@@ -1,0 +1,15 @@
+.container-fluid{
+    border:3px solid black;
+}
+
+.flexContainer{
+    display: flex;
+    border:3px solid black;
+    justify-content: space-between;
+    max-width: 80%;
+    margin: auto;
+}
+
+img{
+    width:200px;
+}

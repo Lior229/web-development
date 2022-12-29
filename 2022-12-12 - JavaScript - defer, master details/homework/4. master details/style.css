@@ -1,0 +1,13 @@
+
+body{
+    box-sizing: border-box;
+}
+
+li:nth-child(even){
+    background-color: lightpink;
+}
+
+
+li:nth-child(odd){
+    background-color: lightblue;
+}

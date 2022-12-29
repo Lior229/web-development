@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Master details HomeWork</title>
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" 
+         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+
+</head>
+<body>
+    <div class="container text-center mt-5">
+        <h1>Lior's chocolate Cake</h1>
+    </div>
+     <form class="container text-center border border-secondary rounded mt-5 p-3 w-50 bg-secondary text-white">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-3">
+                <label class="form-label" for="ingredientBox">Ingredient</label>
+            </div>
+            <div class="col-6">
+                <input type="text" class="form-control" id="ingredientBox">
+            </div>
+            <div id="ingredientValidation"></div>
+        </div>
+        <div class="row justify-content-center align-items-center">
+            <div class="col-3">
+                <label class="form-label" for="amountBox">Amount</label>
+            </div>
+            <div class="col-6">
+                <input type="number" class="form-control" id="amountBox">
+            </div>
+            <div id="amountValidation"></div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-12 text-center">
+                <button type="button" class="btn btn-primary mt-3 btn-outline-dark btn-info text-black" onClick="addingredient()">Add</button>
+            </div>
+        </div>
+    </form>
+        
+    <div class="container text-center mt-3">
+        <div class="col6">
+            <h3>Cake Recipe:</h3>
+        </div>
+        <div class="col6">
+            <p class="d-inline">number of ingredients: </p>
+            <p class="d-inline" id="ingredientsAmount">0,</p>
+            <p class="d-inline"> total Amount: </p>
+            <p class="d-inline" id="totalAmount">0,</p>
+            <p class="d-inline">average: </p>
+            <p class="d-inline"id="average">0</p>
+        </div>
+        <div class="col6">
+            <div class="container text-center mt-2">
+                <ol id="IngredientList" class="list-group list-group-numbered">
+                </ol>
+            </div>
+        </div>
+    </div>
+    
+
+</body>
+</html>

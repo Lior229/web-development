@@ -1,0 +1,34 @@
+*{
+    direction: rtl;
+    box-sizing:border-box;
+}
+
+html{
+    background-color: lightblue;
+    text-align: center;
+}
+
+nav{
+    display: inline;
+}
+
+a{
+    margin: 50px;
+}
+
+.rigth{
+    text-align: right;
+}
+
+#gallertyTable{
+    width: 50%;
+    margin: auto;
+}
+
+div.gallery img{
+    width: 100%;
+  }
+
+
+
+

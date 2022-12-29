@@ -1,0 +1,39 @@
+form{
+    width:300px;
+    border:2px solid black;
+    padding:20px;
+    margin:auto;
+}
+input[type="text"]{
+    margin-bottom:20px;
+}
+table{
+    max-width: 70%;
+    margin: auto;
+}
+
+p{
+    font-size:50px;
+}
+
+.red{
+    color:red;
+}
+
+.bg-blue{
+ 
+}
+
+.para.bg-blue.red{
+    color:red;
+    background-color: blue;
+}
+
+.img-container{
+    width:1000px;
+}
+
+img{
+    width: 100%;
+    height:auto;
+}

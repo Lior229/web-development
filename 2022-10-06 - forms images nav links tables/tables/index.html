@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables</title>
+
+    <style>
+        table {
+            width: 100%;
+        }
+
+        table,
+        tr,
+        td,
+        th {
+            border: 1px solid;
+            border-collapse: collapse;
+
+        }
+
+        td {
+            height: 100px;
+            width: 100px;
+            text-align: center;
+        }
+
+        #cell1 {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- table -->
+    <!-- table row -->
+    <!-- table data -->
+
+    <!-- <table>
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>last name</th>
+                <th>gender</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>ronen</td>
+                <td>levi</td>
+                <td>male</td>
+            </tr>
+            <tr>
+                <td>yasmin</td>
+                <td>levi</td>
+                <td>gender</td>
+            </tr>
+        </tbody>
+    </table> -->
+
+    <table>
+        <tr>
+            <th>Month</th>
+            <th>Savings</th>
+            <th>Savings for holiday!</th>
+        </tr>
+        <tr>
+            <td>January</td>
+            <td>$100</td>
+            <td rowspan="2">$50</td>
+        </tr>
+        <tr>
+            <td>February</td>
+            <td>$80</td>
+
+        </tr>
+        <tr>
+            <td id="cell1">February</td>
+            <td colspan="2">$80</td>
+
+        </tr>
+    </table>
+
+
+
+</body>
+
+</html>

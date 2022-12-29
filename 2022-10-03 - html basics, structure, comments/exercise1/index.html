@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Exercise</title>
+</head>
+<body>
+    <a id="top">this is the top of the file</a>
+    <h1>images hyperlinks and lists</h1>
+    <p>תרגול HTML בסיסי עם כל מיני תגיות</p>
+    <hr>
+    <h3>unorder list</h3>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <h3>order list</h3>
+    <ol>
+        <li><a href="https://www.w3schools.com">Visit W3Schools.com! לינק לאתר חיצוני</a></li>
+        <li><a href="page1.html">מעבר לדף אחר</a></li>
+        <li>3</li>
+        <li>4</li>
+    </ol>
+
+    <h3>decsription list</h3>
+    <dl>
+        <dt>Coffee</dt>
+        <dd>- black hot drink</dd>
+        <dt>Milk</dt>
+        <dd>- white cold drink</dd>
+        <dd>- can be warm</dd>
+    </dl>
+
+    <form>
+        <input type="button" value="כפתור"><br>
+        <input type="Text" name="name" value="Enter name" size="100" /><br>
+        <input type="password" name="pas" size="20" maxlength="8" /><br>
+        <input type="radio" name="gender" title="gen"  value="M" id="M" />Male <br>
+        <input type="radio" name="gender" value="F" id="F"/>Female <br><br> 
+
+        <select name="area">
+            <option value="N">North</option>
+            <option value="C" selected="selected">Center</option>
+            <option value="S">South</option>
+            <option value="J">Jerusalem</option>
+        </select>
+        <br><br>
+
+        <input type="checkbox" name="sport" value="True" /> Sport <br>
+        <input type="checkbox" name="reading" value="checked" />Reading <br>
+        <input type="checkbox" name="tv" value="checked" />T.V. <br>
+        <input type="checkbox" name="internet" value="checked" />Internet <br><br>
+
+        <input type="color" ><br>
+
+        <label for="date">Date</label>
+        <input type="date" id="date" name="date" value="2000-09-22"><br><br>
+
+        <label for="phone">Enter a phone number:</label><br>
+        <input type="tel" id="phone" name="phone" placeholder="123-1234567"
+        pattern="[0-9]{3}-[0-9]{7}">
+        <small>Format: 123-4567890</small><br>
+
+        <input type="submit">
+    </form>
+    
+    <br>
+    <form>
+        <fieldset style="display: inline;">
+          <legend>Question</legend>
+          <input type="radio" name="radio" id="radio">
+          <label for="radio">Variant 1</label>
+          <input type="radio" name="radio" id="radio1">
+          <label for="radio1">Variant 2</label>
+        </fieldset>
+      </form>
+
+  
+    <a href="#top">back to the top of the file</a>
+</body>
+</html>

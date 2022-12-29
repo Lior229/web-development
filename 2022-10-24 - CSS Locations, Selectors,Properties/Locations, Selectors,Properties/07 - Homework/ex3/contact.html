@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>חנות החיות המגניבה בארץ!</h1>
+    </header>
+    <hr>
+    <nav> 
+        <a href="index.html" target="_self" >דף הבית</a>
+        <a href="animals.html" target="_self">חיות</a>
+        <a href="contact.html" target="_self">צור קשר</a>
+    </nav>
+    <br><br>
+    <h2 class="rigth">צור קשר:</h2>
+    <form action="send.html">
+        <table>
+            <tr>
+                <td class="rigth"><label for="firstname">שם פרטי</label></td>
+                <td><input type="text" name="firstname" id="firstname"></td>
+            </tr>
+            <tr>
+                <td class="rigth"><label for="lastname">שם משפחה</label></td>
+                <td><input type="text" name="lastname" id="lastname"></td>
+            </tr>
+            <tr>
+                <td class="rigth"><label for="gender">מין</label></td>
+                <td class="rigth">
+                    <input type="radio" name="gender" id="gender" value="male">זכר
+                    <br>
+                    <input type="radio" name="gender" id="gender" value="female">נקבה
+                </td>
+            </tr>
+            <tr>
+                <td class="rigth"><label for="">עיר</label></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="rigth"><label for="commant">הודעה</label></td>
+                <td class="rigth">
+                    <textarea id="commant" name="commant" rows="5" cols="20"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="rigth">
+                    <input type="submit" value="שלח">
+                    <input type="reset" value="נקה">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </form>
+    
+    <footer>
+        <p id="copyrights">כל הזכויות שמורות &copy;</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,53 @@
+*{
+    direction: rtl;
+}
+
+body{
+    background-color: orange;
+    font-size: 16px;
+}
+
+h1{
+    text-align: center;
+    color: brown;
+}
+
+p{
+    text-align: center;
+}
+
+table{
+    border: 1px solid black ;
+}
+
+
+input[type="text"]{
+    background-color: yellow;
+}
+
+
+input[type="password"]{
+    background-color: yellow;
+}
+
+
+img{
+    height: 200px;
+    width: 200px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: 1px solid black;
+}
+
+img[src="http://www.michaels.com/static/on/demandware.static/-/Sites-MichaelsUS-Library/default/dw28372b33/images/categories/CT-WC-031017-cat-01.jpg"]
+{
+    margin-right: 21vw;
+}
+
+#img-container{
+    display: inline;
+}
+
+.left{
+    text-align: left;
+}

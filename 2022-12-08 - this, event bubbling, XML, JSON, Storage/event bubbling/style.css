@@ -1,0 +1,33 @@
+button{
+    background-color: green;
+    color: white;
+    font-size: 30px;
+    padding: 5px;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    border: 3px solid;
+    height: 100vh;
+}
+
+#grandparent{
+    border: 40px solid red;
+    display: inline-block;
+}
+
+#parent{
+    border: 40px solid blue;
+}
+
+#child{
+    border: 40px solid green;
+}

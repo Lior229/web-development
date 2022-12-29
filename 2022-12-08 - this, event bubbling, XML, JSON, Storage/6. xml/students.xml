@@ -1,0 +1,31 @@
+<students>
+    <student>
+    <firstName>Bart</firstName>
+        <lastName>Simpson</lastName>
+        <age>14</age>
+        <phones>
+            <phone>02-1234567</phone>
+            <phone>02-0421456</phone>
+        </phones>
+        <address>
+            <city>Tel Aviv</city>
+            <street>Hertzel</street>
+            <houseNum>10</houseNum>
+        </address>
+    </student>
+    <student>
+    <firstName>Lisa</firstName>
+        <lastName>Simpson</lastName>
+        <age>17</age>
+        <phones>
+            <phone>02-4567811</phone>
+            <phone>02-3234455</phone>
+        </phones>
+        <address>
+            <city>Haifa</city>
+            <street>Haoranim</street>
+            <houseNum>11</houseNum>
+        </address>
+    </student>
+</students>
+

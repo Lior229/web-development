@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="main.js"></script>
+    <title>event bubbling</title>
+  </head>
+  <body>
+    <table onmouseover="renderContent()" onmouseout="renderContent()" border="1">
+      <thead>
+        <tr>
+          <th>name</th>
+          <th>price</th>
+          <th>description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>kitten</td>
+          <td>10.0</td>
+          <td>cute kitten</td>
+        </tr>
+        <tr>
+          <td>puppy</td>
+          <td>20.00</td>
+          <td>cute puppy</td>
+        </tr>
+        <tr>
+          <td>bunny</td>
+          <td>30.00</td>
+          <td>cute bunny</td>
+        </tr>
+        <tr>
+          <th>rabbit</th>
+          <th>40.0</th>
+          <th>cute rabbit</th>
+        </tr>
+      </tbody>
+    </table>
+
+    <p id="contentParagraph"></p>
+  </body>
+</html>

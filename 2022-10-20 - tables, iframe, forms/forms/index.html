@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <style>
+        .formGroup {
+            padding: 20px;
+            border: 1px solid black;
+            max-width: 200px;
+        }
+
+        p {
+            font-size: 40px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <form method="GET" action="api.html">
+
+        <div class="formGroup">
+            <label for="search">Search something...</label>
+            <br>
+            <input required minlength="4" maxlength="10" name="q" type="text" id="search">
+        </div>
+
+        <div class="formGroup">
+            <label for="firstName">First Name</label>
+            <input placeholder="Enter Your First Name" id="firstName" name="firstName" type="text">
+        </div>
+
+        <div class="formGroup">
+            <label for="lastName">lastName</label>
+            <input id="lastName" name="lastName" type="text">
+        </div>
+
+
+        <br><br>
+        <label for="lastName">lastName</label>
+        <input id="lastName" name="lastName" type="text">
+        <br><br>
+
+
+        <label for="status">status</label>
+        <input name="status" id="status" type="checkbox">
+
+        <br><br>
+        <label for="age">Number</label>
+        <input name="age" type="number" id="age">
+        <br><br>
+        <label for="personalPhoto">Personal Photo</label>
+        <input type="file" name="photo" id="personalPhoto">
+        <br><br>
+        <label for="email">Email</label>
+        <input name="email" type="email">
+        <br><br>
+        <label for="password">Password</label>
+        <input name="password" type="password">
+        <br><br>
+        <input type="time" name="" id="">
+        <br><br>
+        <input type="date">
+        <br><br>
+        <textarea name="" id="" cols="30" rows="10">
+
+        </textarea>
+
+
+        <br><br>
+        <button>Submit</button>
+
+        <input type="color" name="color" id="">
+        <br><br><br>
+
+
+        <label for=""></label>
+        <label for="">man</label>
+        <input name="gender" value="man" type="radio">
+        <label for="">female</label>
+        <input name="gender" value="female" type="radio">
+        <label for="">unknown</label>
+        <input name="gender" value="unknown" type="radio">
+        <br><br><br>
+
+        <select name="gender" id="gender">
+            <option value="man">man</option>
+            <option value="female">female</option>
+            <option value="unknown">unknown</option>
+        </select>
+
+
+    </form>
+
+
+
+
+</body>
+
+</html>

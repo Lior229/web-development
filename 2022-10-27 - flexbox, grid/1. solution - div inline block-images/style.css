@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+#imagesContainer {
+    border: 1px solid red;
+    max-width: 50%;
+    margin: auto;
+}
+
+.imageContainer {
+    display: inline-block;
+    /* width: calc(100% / 6); */
+
+}
+
+img {
+
+    height: 200px;
+
+}

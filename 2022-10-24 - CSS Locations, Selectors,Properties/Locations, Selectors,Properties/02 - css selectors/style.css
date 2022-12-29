@@ -1,0 +1,80 @@
+/* id selector */
+#someId {
+    color: red;
+}
+
+/* class selector */
+.someClass {
+    color: green;
+}
+
+p {
+    color: blue;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#container {
+    border: 1px solid black;
+}
+
+#container:hover {
+    background-color: green;
+}
+
+/*  father */
+#container>p.someClass {
+    color: green;
+}
+
+#container p {
+    color: orange;
+}
+
+#firstP~p {
+    color: red;
+}
+
+.containerThree {
+    border: 2px solid black;
+}
+
+/* pseudo element selector  */
+p#lorem::first-letter {
+    color: green;
+}
+
+/* 
+p:first-child {
+    color: red;
+} */
+
+.containerThree>p:first-child {
+    color: red;
+}
+
+a {
+    font-size: 40px;
+}
+
+input[type="text"] {
+    background-color: red;
+}
+
+#container {
+    color: red;
+}
+
+#container>p {
+    color: inherit;
+}
+
+a[href="https://www.google.co.il"] {
+    color: black;
+    font-size: 50px;
+}
+
+p[dir="rtl"] {
+    font-size: 100px;
+
+}

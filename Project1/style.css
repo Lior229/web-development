@@ -1,0 +1,85 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.bgImg {
+    background-image: url("/Image/granite-texture_1160-692.jpg");
+    background-size: cover;
+}
+
+.bgImgForm {
+    background-image: url("/Image/sheet.jpg");
+    background-size: cover;
+}
+
+.noteStyle {
+    font-size: large;
+    animation: fadein 2s;
+    background-image: url("/Image/notebg.png");
+    background-size: cover;
+    position: relative;
+    width: 250px;
+    height: 300px;
+    margin-left: 20px;
+    padding-top: 70px;
+    padding-right: 30px;
+    word-wrap: break-word;
+}
+
+.noteStyle > p{
+    text-align: left;
+}
+
+.noteStyle > button{
+    display: none;
+}
+
+.noteStyle:hover > button {
+    display: block;
+}
+
+.noteStyle > p:first-of-type {
+    width: 200px;
+    height: 150px;
+    overflow-y:auto;
+}
+
+@font-face {
+    font-family: taskBoardTitle;
+    src: url("./fonts/NexaRust.ttf");
+}
+
+h1 {
+    font-family: taskBoardTitle;
+    font-size: 5rem;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.topright{
+    position: absolute;
+    top: 25px;
+    right: 35px;
+ }
+
+ .dateposition{
+    position: absolute;
+    bottom: 30px;
+    left: 16px;
+  }
+  
+  .timeposition{
+    position: absolute;
+    bottom: 5px;
+    left: 16px;
+  } 
+  
+  .rowCorrection{
+    margin-right: 0 !important;
+  }

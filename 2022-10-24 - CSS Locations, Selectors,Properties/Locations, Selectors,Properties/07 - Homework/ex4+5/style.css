@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+}
+#FancyDiv{
+    width: 400px;
+    height: 100px;
+    text-align: center;
+    font-size:xx-large;
+    margin: 200px auto;
+    background-image: linear-gradient(45deg, yellow, black,red,blue);
+    border-radius: 30px;
+    padding-top: 10px;
+    border: 1px solid black;
+    font-family: lior;
+    font-weight: bold;
+    color: white;
+    box-shadow: 10px 10px 10px grey;
+ /*   transition: 1s linear; */
+    cursor: pointer;
+    animation: LiorAnimation 5s infinite linear reverse;
+}
+
+/*
+#FancyDiv:hover{
+    width: 700px;
+    height:300px;
+    transition: 1s linear;
+}*/
+
+@font-face {
+    font-family: lior;
+    src: url("fonts/DangerNight.ttf");
+}
+
+@keyframes LiorAnimation {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}

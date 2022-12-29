@@ -1,0 +1,54 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: xx-large;
+    background-color: lightblue;
+    height: 100%;
+
+}
+
+section {
+    border: 3px solid red;
+    height: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 15% 80% 5%;
+}
+
+main {
+    grid-column: span 4;
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header,
+footer {
+    grid-column: span 6;
+}
+
+footer {
+    background-color: green;
+}
+
+header {
+    background-color: blue;
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    background-color: pink;
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+img {
+    width: 400px;
+}

@@ -1,0 +1,26 @@
+.row > div{
+    height:50px;
+    /*font-size:xx-large;
+    margin-bottom: 10px; */
+    text-align: center;
+    border:1px solid black;
+}
+
+#colA{
+    background-color: red;
+}
+
+
+#colB{
+    background-color: green;
+}
+
+
+#colC{
+    background-color: blue;
+}
+
+
+#colD{
+    background-color: yellow;
+}

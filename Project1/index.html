@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskBorad</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" 
+         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script defer src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body class="bgImg">
+    <div class="container text-center mt-5">
+        <h1>My Task Board</h1>
+    </div>
+    <form class="container bgImgForm text-center border border-secondary rounded p-3 w-50
+      text-black">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-3">
+                <label class="form-label" for="noteText">Note:</label>
+            </div>
+            <div class="col-6">
+                <input type="text" class="form-control" id="noteTextBox">
+            </div>
+            <div class="col-6">
+                <p id="noteTextValidation"></p>
+            </div>
+        </div>
+        <div class="row justify-content-center align-items-center">
+            <div class="col-3">
+                <label class="form-label" for="DateBox">Date:</label>
+            </div>
+            <div class="col-6">
+                <input type="date" class="form-control" id="dateBox">
+            </div>
+            <div class="col-6">
+                <p id="dateValidation"></p>
+            </div>
+        </div>
+        <div class="row justify-content-center align-items-center">
+            <div class="col-3">
+                <label class="form-label" for="timeBox">Time:</label>
+            </div>
+            <div class="col-6">
+                <input type="time" class="form-control" id="timeBox">
+            </div>
+            <div class="col-6">
+                <p id="timeValidation"></p>
+            </div>
+        </div>
+        <div class="row justify-content-center align-items-center">
+            <div class="col-sm-6 text-end">
+                <button type="button" class="btn btn-primary mt-3 btn-outline-dark btn-info text-black"
+                onClick="addNote()">
+                    Add Note
+                </button>
+            </div>
+            <div class="col-sm-6 text-start">
+                <button type="button" class="btn btn-primary mt-3 btn-outline-dark btn-info text-black"
+                onClick="clearForm()">
+                    Clear
+                </button>
+            </div>
+        </div>
+    </form>
+
+    <div class="continer">
+        <div class="row rowCorrection" id="NotesBoard">
+        </div>
+    </div>
+    
+</body>
+</html>
