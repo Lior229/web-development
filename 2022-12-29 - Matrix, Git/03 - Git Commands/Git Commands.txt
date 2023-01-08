@@ -1,0 +1,29 @@
+- Config Commands:
+	git --version					Display git version
+	git config --global user.name "<username>"	Set username once
+	git config --global user.email "<email>"	Set email once
+	git config --global --unset user.name		Unsets username once
+	git config --global --unset user.email		Unsets email once
+
+- Directories:
+	pwd						Show current directory
+	cd .. 						Go one directory up
+	cd /c/<dir1>/<dir2>				Change directory (must be / and not \)
+	ls						List files and folders in the current directory
+- Staging & committing:
+	git init					Initialize a new local Repository (in empty directory or a directory containing an existing project)
+	git add <file>					Add a file to the stage
+	git add <dir>					Add a directory to the stage
+	git add .					Add all files and directories to the stage
+	git commit -m <"message">			Commit the stage to the repository (-m = message)
+	git log						List commit history
+	git log -<n>					List last n commits
+	git log --oneline				List commit history in one line
+	git log --oneline -<n>				List last n commit history in one line
+	git checkout <commit-id>			Checkout to that commit
+	git checkout master				Checkout to master
+- GitHub:
+	git push <rep-address> <branch-name>		Push local branch-name to GitHub
+	git remote add <push-name> <rep-address>	Create a push name (Label) to a repository address
+	git push <push-name> <branch-name>		Push local branch-name to GitHub using given push name (Label)
+	git clone <rep-address>				Clone GitHub repository to some current directory

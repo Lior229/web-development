@@ -1,0 +1,51 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    text-align: center;
+    box-sizing: border-box;
+}
+
+form{
+    width:250px;
+    border:1px solid black;
+    padding:10px;
+    margin:auto;
+    text-align: left;
+    border-radius: 10px;
+}
+
+input,button{
+    width:100%;
+    margin-bottom:10px;
+}
+
+table{
+    margin:20px auto;
+    border-collapse: collapse;
+}
+
+table,th,td{
+    border:1px solid green;
+}
+
+/* even rows */
+tr:nth-child(even){
+    background-color: lightgreen;
+}
+
+/* odd rows */
+tr:nth-child(odd){
+    background-color: lightblue;
+}
+
+thead > tr:first-child{
+    background-color: gray;
+    color:white;
+}
+
+#firstNameBox:focus{
+    background-color: aliceblue;
+}
+

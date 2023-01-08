@@ -1,0 +1,20 @@
+*{
+    box-sizing: border-box;
+}
+
+#myCanvas{
+    border:1px solid black;
+    margin-top: 50;
+}
+
+button{
+    outline: none;
+    margin-right: 8px;
+}
+
+.buttons{
+    border:2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

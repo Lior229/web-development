@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+    <title>master details including delete</title>
+</head>
+<body>
+
+    <h1>customers</h1>
+
+    <form>
+        <label>Firs Name</label>
+        <input type="text" id="firstNameBox">
+        <label>Last Name</label>
+        <input type="text" id="lastNameBox">
+        <label>Email </label>
+        <input type="email" id="emailBox">
+        <button type="button" onclick="addCustomer()">Add</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+
+</body>
+</html>

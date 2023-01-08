@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Buttons Container -->
+    <div class="buttons">
+        <button onclick="updateColor(this)" style="background-color: red">red</button>
+        <button onclick="updateColor(this)"  style="background-color: green">green</button>
+        <button onclick="updateColor(this)"  style="background-color: blue">blue</button>
+        <button onclick="updateColor(this)"  style="background-color: pink">pink</button>
+        <button onclick="updateColor(this)"  style="background-color: purple">purple</button>
+        <button onclick="updateLineWidth(1)">1</button>
+        <button onclick="updateLineWidth(2)">2</button>
+        <button onclick="updateLineWidth(3)">3</button>
+        <button onclick="updateLineWidth(4)">4</button>
+        <button onclick="updateLineWidth(5)">5</button>
+    </div>
+
+    <!-- Canvas -->
+
+    <canvas 
+    id="myCanvas" 
+    width="700"
+    height="400" 
+    onmousemove="paint()"
+    onmousedown="reset()"
+    onmouseenter="reset()" 
+    >
+
+    </canvas>
+
+
+</body>
+</html>
