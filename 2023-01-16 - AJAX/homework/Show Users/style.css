@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+table {
+    width: 70%;
+    margin: auto;
+    border-collapse: collapse;
+  }
+
+table, th, td {
+    border: 1px solid;
+    padding: 3px;
+  }

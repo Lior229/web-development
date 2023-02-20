@@ -1,0 +1,16 @@
+#imgContiner {
+    border: 2px solid black;
+    flex: auto;
+    flex-direction: column;
+}
+
+.imgCard{
+    border: 2px solid pink;
+    text-align: center;
+}
+
+img{
+    margin: auto;
+    height: 250px;
+    width: 250px;
+}
