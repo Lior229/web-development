@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+main{
+    height: 100%;
+    text-align: center;
+    margin-top: 0.5em;
+}
+
+#result-container{
+    border: 2px solid gray;
+    margin: auto;
+}
+
+table {
+    width: 70%;
+    margin: auto;
+    border-collapse: collapse;
+  }
+
+table, th, td {
+    border: 1px solid;
+    padding: 3px;
+}
+
+/* .row{
+    margin: 0;
+} */
+
+/* .myCardStyle {
+    border: 2px solid gray;
+    min-height: 15em;
+    min-width: 20em;
+    margin: 0.5em;
+} 
+
+
+.show{
+    margin-top: 0.5em;
+} 
+
+.card >  img {
+    height: 25%;
+    width: 25%;
+    margin: auto;
+} */
+
+/* 
+
+.card-text {
+    margin: 0;
+}
+
+.show{
+    border: 2px solid gray;
+} 
+
+.myCardStyle > button {
+    margin-top: 0.5em;
+}
+
+ */
+
