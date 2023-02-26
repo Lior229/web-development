@@ -1,0 +1,12 @@
+@import './reset';
+@import './mixins';
+@import './variables';
+
+$colors: red,blue,green,yellow;
+
+@each $color in $colors {
+    .bg-#{$color}{
+        background-color: $color;
+    }
+}
+

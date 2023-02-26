@@ -1,0 +1,36 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.btn {
+  background-color: #337ab7;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+.btn--secondary {
+  background-color: #5cb85c;
+}
+.btn--danger {
+  background-color: #d9534f;
+}
+.btn.red {
+  color: red;
+}
+
+.gradient-bg {
+  height: 200px;
+  width: 200px;
+  background: -webkit-gradient(linear, left top, right top, from(#7474BF), to(#348ac7));
+  background: linear-gradient(to right, #7474BF, #348ac7);
+}
+
+.header {
+  height: 300px;
+  border: 1px solid black;
+  background: url("/images/header-bg.jpg") no-repeat center;
+}/*# sourceMappingURL=main.css.map */

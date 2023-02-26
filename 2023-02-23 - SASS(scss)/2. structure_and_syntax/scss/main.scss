@@ -1,0 +1,29 @@
+.card{
+    // block
+    height:200px;
+    width:200px;
+    border:1px solid black;
+
+    &__title{
+        //element
+        color:red;
+        &:hover{
+          color:green;
+          background-color: blue;
+        }
+    }
+
+    &__text{
+        //element
+        color:blue;
+        font-size:20px;
+
+        &--active{
+            //specific styles for the active status (behavior)
+            color:green;
+            font-weight: bold;
+        }
+    }
+
+}
+

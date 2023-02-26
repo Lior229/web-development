@@ -1,0 +1,14 @@
+@import './variables';
+
+@function getColor($color-name){
+    @return map-get($colors ,$color-name );
+}
+
+@function gradient($from,$to){
+ @return linear-gradient(to right,$from,$to);
+}
+
+@function bgImage($image){
+    $result:url("#{$image-path}#{$image}.jpg");
+    @return $result;
+}

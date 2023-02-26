@@ -1,0 +1,20 @@
+@import './variables';
+@import './reset';
+
+
+.btn{
+    background-color: map-get($colors,"primary");
+    color:#fff;
+    padding:10px 20px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    &--secondary{
+        background-color: map-get($colors,"secondary");
+    }
+    &--danger{
+        background-color: map-get($colors,"danger");
+    }
+    &.red{
+        color:red;
+    }
+}

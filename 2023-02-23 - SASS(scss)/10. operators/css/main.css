@@ -1,0 +1,21 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 150px;
+  height: 150px;
+  margin: 50px;
+}
+
+.container {
+  width: 200px;
+  height: 100px;
+}
+
+.container {
+  width: 100px;
+}/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,16 @@
+// sass variables
+
+$primary-color:#fff;
+$accent-color:red;
+$text-color:green;
+$mainFontSize:16px;
+
+
+body{
+    background-color: $primary-color;
+    
+    & > p {
+        color:$text-color;
+        font-size: $mainFontSize;
+    }
+}

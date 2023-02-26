@@ -1,0 +1,20 @@
+.card {
+  height: 200px;
+  width: 200px;
+  border: 1px solid black;
+}
+.card__title {
+  color: red;
+}
+.card__title:hover {
+  color: green;
+  background-color: blue;
+}
+.card__text {
+  color: blue;
+  font-size: 20px;
+}
+.card__text--active {
+  color: green;
+  font-weight: bold;
+}/*# sourceMappingURL=main.css.map */

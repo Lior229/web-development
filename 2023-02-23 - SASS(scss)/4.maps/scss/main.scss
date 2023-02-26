@@ -1,0 +1,22 @@
+$colors:(
+    "primary":#337ab7,
+    "secondary":#5cb85c,
+    "danger" : #d9534f
+);
+
+.btn{
+    background-color: map-get($colors,"primary");
+    color:#fff;
+    padding:10px 20px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    &--secondary{
+        background-color: map-get($colors,"secondary");
+    }
+    &--danger{
+        background-color: map-get($colors,"danger");
+    }
+    &.red{
+        color:red;
+    }
+}

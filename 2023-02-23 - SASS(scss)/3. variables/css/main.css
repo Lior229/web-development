@@ -1,0 +1,7 @@
+body {
+  background-color: #fff;
+}
+body > p {
+  color: green;
+  font-size: 16px;
+}/*# sourceMappingURL=main.css.map */

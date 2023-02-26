@@ -1,0 +1,42 @@
+@import './reset';
+@import './mixins';
+@import './variables';
+
+
+
+.para1{
+    font-size:30px;
+    font-weight:bold;
+    &:hover{
+        color:red;
+    }
+}
+
+.para2,.para3{
+    @extend .para1;
+     font-size:10px;
+}
+
+.message{
+    border:1px solid red;
+    padding:10px;
+    color:#333;
+    font-weight: bold;
+    &--success{
+        @extend .message;
+        border-color:green;
+        border-width: 3px;;
+    }
+    &--error{
+        @extend .message;
+        border-color:red;
+        border-width: 5px;
+    }
+    &--warning{
+        @extend .message;
+        border-color:yellowgreen;
+        border-width: 8px;
+    }
+
+}
+

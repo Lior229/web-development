@@ -1,0 +1,18 @@
+/*# sourceMappingURL=main.css.map */
+
+/**
+   native css variables
+**/
+
+
+:root {
+    --primary-color:#fff;
+    --accent-color:#ff652f;
+    --text-color:#ccc;
+}
+
+
+body{
+    background-color: var(--accent-color);
+    color:var(--text-color);
+}

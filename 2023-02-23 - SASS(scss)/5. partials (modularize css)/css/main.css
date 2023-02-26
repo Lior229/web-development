@@ -1,0 +1,23 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.btn {
+  background-color: #337ab7;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+.btn--secondary {
+  background-color: #5cb85c;
+}
+.btn--danger {
+  background-color: #d9534f;
+}
+.btn.red {
+  color: red;
+}/*# sourceMappingURL=main.css.map */

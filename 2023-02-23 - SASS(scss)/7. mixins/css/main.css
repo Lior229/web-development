@@ -1,0 +1,93 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #FFFFFF;
+}
+body.dark {
+  background-color: #000000;
+  color: yellow;
+}
+
+.box {
+  width: 800px;
+  height: 800px;
+  border: 4px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.box > p.content {
+  border: 1px solid red;
+}
+@media (max-width: 800px) {
+  .box > p.content {
+    background-color: blue;
+  }
+}
+
+.triangle-up {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent;
+  border-bottom-width: 100px;
+  border-bottom-color: red;
+  border-left-width: 100px;
+  border-left-color: transparent;
+  border-right-width: 100px;
+  border-right-color: transparent;
+}
+
+.triangle-down {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent;
+  border-top-width: 100px;
+  border-top-color: blue;
+  border-left-width: 100px;
+  border-left-color: transparent;
+  border-right-width: 100px;
+  border-right-color: transparent;
+}
+
+.triangle-left {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent;
+  border-right-width: 100px;
+  border-right-color: green;
+  border-top-width: 100px;
+  border-top-color: transparent;
+  border-bottom-width: 100px;
+  border-bottom-color: transparent;
+}
+
+.triangle-right {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent;
+  border-left-width: 100px;
+  border-left-color: yellow;
+  border-top-width: 100px;
+  border-top-color: transparent;
+  border-bottom-width: 100px;
+  border-bottom-color: transparent;
+}/*# sourceMappingURL=main.css.map */

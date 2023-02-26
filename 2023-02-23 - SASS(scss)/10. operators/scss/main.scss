@@ -1,0 +1,43 @@
+@import './reset';
+@import './mixins';
+@import './variables';
+
+
+// arithmetic operators 
+
+$width:100px;
+$height:200px;
+
+.container{
+    width: $width + 50px;
+    height: $height - 50px;
+    margin: ($height - $width) / 2;
+}
+
+// comparison operators 
+
+$width:100px;
+$height:200px;
+
+
+.container {
+    @if $width > $height{
+        width:$width;
+        height:$height
+    } @else {
+        width:$height;
+        height: $width;
+    }
+}
+
+// equality operators
+
+$value:100px;
+
+.container{
+    @if($value == 100px){
+        width:$value;
+    } @else{
+        width:200px;
+    }
+}

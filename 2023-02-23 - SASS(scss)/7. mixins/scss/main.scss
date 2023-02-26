@@ -1,0 +1,37 @@
+@import './reset';
+@import './mixins';
+@import './variables';
+
+body{
+    @include theme-colors($light-theme:true);
+    &.dark{
+        @include theme-colors($light-theme:false);
+    }
+}
+
+.box{
+    width:800px;
+    height:800px;
+    border:4px solid black;
+    // @include flexCenter;
+    @include flexCenterWidthDirection(column);
+    &  > p.content {
+        border:1px solid red;
+        @include mobile {
+            background-color: blue;
+        }
+    }
+}
+
+.triangle-up{
+    @include triangle(100px,up,red);
+}
+.triangle-down{
+    @include triangle(100px,down,blue);
+}
+.triangle-left{
+    @include triangle(100px,left,green);
+}
+.triangle-right{
+    @include triangle(100px,right,yellow);
+}
