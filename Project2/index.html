@@ -27,14 +27,30 @@
                     <a class="nav-link" id="about-link" href="#">About</a>
                   </li>
                 </ul>
-                  <input class="me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success">Search coin</button>
+                  <input id="searchBox" class="me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" id="search-btn">Search coin</button>
               </div>
             </div>
           </nav>
     </header>
+    <div class="modal" id="myModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Too many coins selected</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="coin-list">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+  </div>
     <main id="root">
-      <div id="card-container">
+      <!-- <div id="card-container"></div> -->
     </main>
 </body>
 </html>
