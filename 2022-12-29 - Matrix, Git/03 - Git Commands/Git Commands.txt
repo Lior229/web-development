@@ -27,3 +27,4 @@
 	git remote add <push-name> <rep-address>	Create a push name (Label) to a repository address
 	git push <push-name> <branch-name>		Push local branch-name to GitHub using given push name (Label)
 	git clone <rep-address>				Clone GitHub repository to some current directory
+git pull
