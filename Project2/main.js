@@ -110,28 +110,29 @@ function registerEventListeners() {
             if (reportCoins.length < 5) {
                 reportCoins.push(coin);
             } else {
-                //todo add the select coin ( th 6)
-                // switch with other coin -add button 
-                //todo: clear coin-list
-                // no need close and X
-                $("#coin-list").html(`<p>You can choose up to 5 coins.</p>
-                                      <p>coin:</p>
+                // class for butuun to event click + id for coin.id
+                let ulHTML = `<ul class="list-group">`;
+
+                ulHTML += `<li class="list-group-item">
                                         <p>Coin symbol: ${coin.symbol}, Coin name: ${coin.name}</p>
-                                        <p>you have already select the coins:</p>
-                `);
-                let ReportCoinHTML = `<ul class="list-group">`;
+                                    </li>`; 
 
                 for (const reportCoin of reportCoins){
-                    ReportCoinHTML += `<li class="list-group-item">
+                    ulHTML += `<li class="list-group-item" >
                                             <div>
-                                                <p>Coin symbol: ${reportCoin.symbol}, Coin name: ${reportCoin.name}</p>
-                                                <button class="btn btn-warning" type="button">switch</button>
+                                                <p>Coin symbol: ${reportCoin.symbol}, <br> Coin name: ${reportCoin.name}</p>
+                                                <button class="btn btn-warning" type="button" id="">switch</button>
                                             </div>
                                         </li>`;
                 }
 
-                ReportCoinHTML += `</ul>`;
-                $("#coin-list").append(ReportCoinHTML);
+                ulHTML += `</ul>`;
+
+                $("#coin-list-cointner").html("");
+                $("#coin-list-cointner").append(`<p>You can choose up to 5 coins.</p>
+                                                 <p>select the wanted coins:</p>`);
+
+                $("#coin-list-cointner").append(ulHTML);
                 $("#myModal").modal("show");
                 this.checked = false;
             }

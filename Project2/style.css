@@ -17,8 +17,8 @@ html, body, main{
     min-height: 15em;
     min-width: 20em;
     margin: 0.5em;
+    word-wrap: break-word;
 } 
-
 
 .show{
     margin-top: 0.5em;
@@ -30,3 +30,20 @@ html, body, main{
     margin: auto;
 }
 
+li.list-group-item{
+    position: relative;
+}
+
+li.list-group-item > div > p {
+    display: inline-block;
+}
+
+li.list-group-item > div {
+    word-wrap: break-word;
+}
+
+li.list-group-item > div > button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
