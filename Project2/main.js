@@ -2,8 +2,7 @@ const COINS_API_URL = "https://api.coingecko.com/api/v3/coins/list";
 const COINS_API_BY_ID = "https://api.coingecko.com/api/v3/coins/";
 const localStorageKey = 'CoinsKey'
 const localStorageReportKey = 'ReportCoinsKey'
-const localStorageMoreInfoKey = 'MoreInfoDatesKey'
-const TIME_OUT_MORE_INFO = 120000;
+const TIME_OUT_CHECK = 10000;
 
 let coins;
 let reportCoins;
@@ -41,33 +40,34 @@ function registerEventListeners() {
     $(":checkbox").off("change")
 
     $(".moreInfo").on("click", async function (event) { 
-
         const clicked_coin_id = $(this).attr('data-coin-id')
+        // $(`#moreInfo-${clicked_coin_id}`)[0].children.length is 0 when opening and 1 when closing
+        if ($(`#moreInfo-${clicked_coin_id}`)[0].children.length === 0) {
+            const loaderHtml = `<div class="card card-body">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </div>`;
 
-        const loaderHtml = `<div class="card card-body">
-                            <div class="spinner-border text-primary" role="status">
-                                <span class="visually-hidden">Loading...</span>
-                            </div>
-                        </div>`;
+            $(`#moreInfo-${clicked_coin_id}`).html(loaderHtml);
 
-        $(`#moreInfo-${clicked_coin_id}`).html(loaderHtml);
+            try {
+                let moreInfo = await getUpdatedMoreInfo(clicked_coin_id)
+                        
+                let moreInfoHtml = `<div class="card card-body">
+                                        <img src="${moreInfo.coin_img}" alt="">
+                                        <br>
+                                        <p class="card-text"> UDS ${moreInfo.usd_price}&dollar;</p>
+                                        <p class="card-text"> LIS ${moreInfo.ils_price}&#8362</p>
+                                        <p class="card-text"> EUR ${moreInfo.eur_price}&euro;</p>
+                                    </div>`;    
 
-        try {
-            let moreInfo = await getUpdatedMoreInfo(clicked_coin_id)
-                    
-            let moreInfoHtml = `<div class="card card-body">
-                                    <img src="${moreInfo.coin_img}" alt="">
-                                    <br>
-                                    <p class="card-text"> UDS ${moreInfo.usd_price}&dollar;</p>
-                                    <p class="card-text"> LIS ${moreInfo.ils_price}&#8362</p>
-                                    <p class="card-text"> EUR ${moreInfo.eur_price}&euro;</p>
-                                </div>`;    
-
-            $(`#moreInfo-${clicked_coin_id}`).html(moreInfoHtml);
-            
-        } catch (error) {
-            console.log(error);
-            //TODO: display err in card
+                $(`#moreInfo-${clicked_coin_id}`).html(moreInfoHtml);
+                
+            } catch (error) {
+                console.log(error);
+                //TODO: display err in card
+            }
         }
 
     });
@@ -159,7 +159,7 @@ function loadCoinsFromLocalStorage(storageKey) {
 
     const str = localStorage.getItem(storageKey);
   
-    const coins = (str === null) ? [] : JSON.parse(str);
+    const coins  = (str === null) ? [] : JSON.parse(str);
   
     return coins;
 }
@@ -236,36 +236,31 @@ async function getReportCoins() {
 
 async function getUpdatedMoreInfo(coin_id) {
     return new Promise(async (resolve, reject) => {
-        moreInfoDates = loadCoinsFromLocalStorage(localStorageMoreInfoKey);
+        let str = localStorage.getItem(coin_id);
+        let lastInfoDate  = (str === null) ? null : JSON.parse(str);
         let updatedInfo;
-    
-        let lastInfoDate = moreInfoDates.find((moreinfo_data)=>{
-            return moreinfo_data.id === coin_id;
-        })
-    
-        if(lastInfoDate) {
-            if (Date.now() - lastInfoDate.update_time > 20000) {
-                console.log("more then 15000"+ Date.now() - lastInfoDate.update_time);
+
+        console.log(lastInfoDate);
+
+        if(lastInfoDate) {           
+            if (Date.now() - lastInfoDate.update_time > TIME_OUT_CHECK) {
                 try {
-                    console.log("getUpdatedMoreInfo: api call 1");
+                    console.log("getUpdatedMoreInfo: api call 1, timepass:"+ Date.now() - lastInfoDate.update_time);
                     updatedInfo = await getmoreInfoFromApi(coin_id);
-                    resolve(updatedInfo)
                 } catch (error) {
                     console.log(error);
                 }
-            } else{
-                console.log("getUpdatedMoreInfo: less then 2 min");
-            }
-        }
-        else{
+            } else updatedInfo = lastInfoDate
+        } else{
             try {
-                console.log("api call 2");
+                console.log("getUpdatedMoreInfo: api call 2, no more info at local storage");
                 updatedInfo = await getmoreInfoFromApi(coin_id);
-                resolve(updatedInfo)
             } catch (error) {
                 console.log(error);
             }
         }
+
+        resolve(updatedInfo)
         
     })
 }
@@ -273,8 +268,6 @@ async function getUpdatedMoreInfo(coin_id) {
 function getmoreInfoFromApi(coin_id){
 
     const url = COINS_API_BY_ID + coin_id
-
-    console.log(url);
 
     return new Promise((resolve, reject) => {
         $.ajax({
@@ -284,14 +277,14 @@ function getmoreInfoFromApi(coin_id){
                 const {image, market_data} = moreInfo;
 
                 const updatedInfo = {
+                    update_time: Date.now(),
                     coin_img: image.thumb,
-                    usd_price: market_data.current_price.usd,
-                    ils_price: market_data.current_price.ils,
-                    eur_price: market_data.current_price.eur
+                    usd_price: market_data.current_price.usd || 'N/A',
+                    ils_price: market_data.current_price.ils || 'N/A',
+                    eur_price: market_data.current_price.eur || 'N/A'
                 }
 
-                // moreInfoDates.push({id: coin_id,update_time: Date.now()});
-                // localStorage.setItem(localStorageMoreInfoKey, JSON.stringify(moreInfoDates));
+                localStorage.setItem(coin_id, JSON.stringify(updatedInfo));             
                 resolve(updatedInfo);
             },
             error: function (err){
