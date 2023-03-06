@@ -35,15 +35,11 @@ li.list-group-item{
 }
 
 li.list-group-item > div > p {
-    display: inline-block;
-}
-
-li.list-group-item > div {
-    word-wrap: break-word;
+    width: 75%;
 }
 
 li.list-group-item > div > button {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 30%;
+    right: 1%;
 }
