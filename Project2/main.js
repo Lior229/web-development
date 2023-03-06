@@ -75,7 +75,6 @@ function registerEventListeners() {
     $("#search-btn").on("click", function() {
         const symbolToSearch = $("#searchBox").val().toLowerCase();
 
-        // !symbolblabla
         if (symbolToSearch.length < 1) {
             //display all coins if there is no string to search
             displayCoins(coins);
@@ -100,48 +99,73 @@ function registerEventListeners() {
 
     $(":checkbox").on("change", function() {
 
-        const coin = coins.find((coin) => {
+        let enteringCoin = coins.find((coin) => {
             return coin.id === this.id.replace('reportCheckbox-','');
         });
 
         if(this.checked) {
             if (reportCoins.length < 5) {
-                reportCoins.push(coin);
+                reportCoins.push(enteringCoin);
             } else {
-                // class for butuun to event click + id for coin.id
+                $("#coin-list-modal-cointner").empty();
+                $("#coin-list-modal-cointner").append(`<p>You can choose up to 5 coins.</p>
+                                                 <p>select the wanted coins:</p>`);
+
                 let ulHTML = `<ul class="list-group">`;
 
                 ulHTML += `<li class="list-group-item">
-                                        <p>Coin symbol: ${coin.symbol}, Coin name: ${coin.name}</p>
+                                        <p>Coin symbol: ${enteringCoin.symbol}, Coin name: ${enteringCoin.name}</p>
                                     </li>`; 
 
-                for (const reportCoin of reportCoins){
-                    ulHTML += `<li class="list-group-item" >
-                                            <div>
-                                                <p>Coin symbol: ${reportCoin.symbol}, <br> Coin name: ${reportCoin.name}</p>
-                                                <button class="btn btn-warning" type="button" id="">switch</button>
-                                            </div>
-                                        </li>`;
-                }
+                reportCoins.forEach(reportCoin => {
+                    ulHTML += `<li class="list-group-item">
+                    <div>
+                        <p>Coin symbol: ${reportCoin.symbol}, <br> Coin name: ${reportCoin.name}</p>
+                        <button class="switch-report btn btn-warning" type="button" data-coin-id=${reportCoin.id}>switch</button>
+                    </div>
+                </li>`;
+                    
+                });
 
                 ulHTML += `</ul>`;
+                $("#coin-list-modal-cointner").append(ulHTML);
 
-                $("#coin-list-cointner").html("");
-                $("#coin-list-cointner").append(`<p>You can choose up to 5 coins.</p>
-                                                 <p>select the wanted coins:</p>`);
+                $(".switch-report").on("click", function() {
 
-                $("#coin-list-cointner").append(ulHTML);
+                    let exitingCoin = reportCoins.find((coin) => {
+                        return coin.id === $(this).attr('data-coin-id');
+                    });
+
+                    console.log('mamamamama',exitingCoin);
+                    reportCoins.splice((reportCoins.indexOf(exitingCoin)), 1);
+                    reportCoins.push(enteringCoin);
+
+                    $(`#reportCheckbox-${exitingCoin.id}`)[0].checked = false
+
+                    console.log(this);
+
+                    // update local storage after change
+                    localStorage.setItem(localStorageReportKey, JSON.stringify(reportCoins));
+
+                    $("#myModal").modal("hide");
+                });
+
                 $("#myModal").modal("show");
-                this.checked = false;
+
             }
         } else {
             // Remove coind from report arry
-            reportCoins.splice(reportCoins.indexOf(coin), 1);
+            const index = reportCoins.findIndex((coin) => {
+                return coin.id == enteringCoin.id
+            })
+            reportCoins.splice(index, 1);
         }
 
-        // update loacl storage after change
+        // update local storage after change
         localStorage.setItem(localStorageReportKey, JSON.stringify(reportCoins));
     });
+
+
 
 }
 
