@@ -86,6 +86,7 @@ function registerEventListeners() {
             if (result.length < 1) {
                 //display all coins if there no search result 
                 $(".coinCardContainer").show()
+                //TODO: add messages to let know that the search had no result 
             } else {
                 $(".coinCardContainer").hide()
 
@@ -130,19 +131,20 @@ function registerEventListeners() {
                 ulHTML += `</ul>`;
                 $("#coin-list-modal-cointner").append(ulHTML);
 
+                $("button[data-bs-dismiss='modal']").on("click", function() {
+                    $(`#reportCheckbox-${enteringCoin.id}`)[0].checked = false
+                })
+
                 $(".switch-report").on("click", function() {
 
                     let exitingCoin = reportCoins.find((coin) => {
                         return coin.id === $(this).attr('data-coin-id');
                     });
 
-                    console.log('mamamamama',exitingCoin);
                     reportCoins.splice((reportCoins.indexOf(exitingCoin)), 1);
                     reportCoins.push(enteringCoin);
 
                     $(`#reportCheckbox-${exitingCoin.id}`)[0].checked = false
-
-                    console.log(this);
 
                     // update local storage after change
                     localStorage.setItem(localStorageReportKey, JSON.stringify(reportCoins));
@@ -264,12 +266,9 @@ async function getUpdatedMoreInfo(coin_id) {
         let lastInfoDate  = (str === null) ? null : JSON.parse(str);
         let updatedInfo;
 
-        console.log(lastInfoDate);
-
         if(lastInfoDate) {           
             if (Date.now() - lastInfoDate.update_time > TIME_OUT_CHECK) {
                 try {
-                    console.log("getUpdatedMoreInfo: api call 1, timepass:"+ Date.now() - lastInfoDate.update_time);
                     updatedInfo = await getmoreInfoFromApi(coin_id);
                 } catch (error) {
                     console.log(error);
@@ -277,7 +276,6 @@ async function getUpdatedMoreInfo(coin_id) {
             } else updatedInfo = lastInfoDate
         } else{
             try {
-                console.log("getUpdatedMoreInfo: api call 2, no more info at local storage");
                 updatedInfo = await getmoreInfoFromApi(coin_id);
             } catch (error) {
                 console.log(error);
