@@ -1,5 +1,6 @@
 const COINS_API_URL = "https://api.coingecko.com/api/v3/coins/list";
 const COINS_API_BY_ID = "https://api.coingecko.com/api/v3/coins/";
+const REPORT_API = "https://min-api.cryptocompare.com/data/pricemulti?fsyms=mycoins&tsyms=USD";
 const localStorageKey = 'CoinsKey'
 const localStorageReportKey = 'ReportCoinsKey'
 const TIME_OUT_CHECK = 10000;
@@ -7,6 +8,7 @@ const TIME_OUT_CHECK = 10000;
 let coins;
 let reportCoins;
 let moreInfoDates;
+let refreshChartInterval;
 
 const navigations = {
     'home-link': 'home.html',
@@ -219,6 +221,7 @@ async function showPage(url) {
 }
 
 async function handlePageChange(url) {
+    clearInterval(refreshChartInterval);
     switch (url) {
         case navigations["home-link"]:
                 await getCoins();
@@ -227,6 +230,7 @@ async function handlePageChange(url) {
                 registerEventListeners()
             break;
         case navigations["report-link"]:
+                displayReport();
             break;
         case navigations["about-link"]:
         default:
@@ -357,4 +361,119 @@ function displayCoins(coins) {
 
     $("#card-container").html(cards);
     $("#card-container").show();
+}
+
+async function displayReport(){
+
+    let chartTitle = "";
+    let url = "";
+
+    reportCoins.forEach(reportCoin => {
+        chartTitle += reportCoin.symbol.toUpperCase() + ","
+    });
+
+    chartTitle = chartTitle.slice(0, chartTitle.length-1);
+
+    url = REPORT_API.replace("mycoins", chartTitle)
+
+    let chartData = [];
+    const first_prices = await getPriceApi(url);
+
+    reportCoins.forEach(reportCoin => {
+
+        let first_price = first_prices.find((price) => {
+            return price.symbol === reportCoin.symbol.toUpperCase();
+        }).price;
+
+        let coinData = {
+            type: "spline",
+            name: reportCoin.symbol,
+            showInLegend: true,
+            xValueFormatString: "hh:mm:ss",
+            yValueFormatString: "$##########.###########",
+            dataPoints:[ {
+                x: new Date(),
+                y: first_price
+            }]};
+
+            chartData.push(coinData);
+    });
+
+    // create chart with first point
+    let chart = new CanvasJS.Chart("chartContainer", {
+        exportEnabled: true,
+        animationEnabled: true,
+		title:{
+			text: "Coins report"          
+		},
+        subtitles: [{
+            text: chartTitle
+        }],
+        axisX: {
+            title: "Time",
+            valueFormatString:"hh:mm:ss"
+        },
+        axisY: {
+            title: "Coin Price in USD",
+            yValueFormatString: "$##########.###########",
+            titleFontColor: "#4F81BC",
+            lineColor: "#4F81BC",
+            labelFontColor: "#4F81BC",
+            tickColor: "#4F81BC"
+        },
+        toolTip: {
+            shared: true
+        },
+		data: chartData             
+	});
+
+	chart.render();
+
+    console.log(chartData);
+
+    refreshChartInterval = setInterval(async ()=>{
+        const prices = await getPriceApi(url);
+
+        prices.forEach((price)=>{
+
+            //add new price to chart data
+            let coinData = chartData.find((data) => {
+                return data.name.toUpperCase() === price.symbol;
+            });
+
+            coinData.dataPoints.push({
+                x: new Date(),
+                y: price.price
+            });
+
+        })
+
+        chart.render();
+    }, 2000);
+
+}
+
+function getPriceApi(url){
+    return new Promise((resolve, reject) => {
+        $.ajax({
+            url: url,
+            success: function (prices) {
+
+                let current_prices = [];
+
+                for (var price in prices) {
+
+                    current_prices.push({
+                        symbol: price,
+                        price: prices[price].USD
+                        })
+                    
+                }
+                resolve(current_prices);
+            },
+            error: function (err){
+                reject(err)
+            }
+        })
+    })
 }
