@@ -1,0 +1,8 @@
+22.5.2023 	 Route /rodsd not exists
+---------------------------------
+22.5.2023 	 id 7943905 not exists
+---------------------------------
+29.5.2023 	 Route /favicon.ico not exists
+---------------------------------
+29.5.2023 	 Cannot delete or update a parent row: a foreign key constraint fails (`northwind`.`order details`, CONSTRAINT `FK_Order_Details_Products` FOREIGN KEY (`ProductID`) REFERENCES `products` (`ProductID`))
+---------------------------------
