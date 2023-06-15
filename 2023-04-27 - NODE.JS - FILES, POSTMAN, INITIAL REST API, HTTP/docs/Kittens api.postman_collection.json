@@ -1,0 +1,79 @@
+{
+	"info": {
+		"_postman_id": "c2d62e27-6cb9-49d2-8832-deefbdfc440b",
+		"name": "Kittens api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET kittens",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/kittens",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"kittens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET kitten",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/kittens/1 ",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"kittens",
+						"1 "
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST add kitten",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"yogev\",\r\n    \"age\":12\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/kittens",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"kittens"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

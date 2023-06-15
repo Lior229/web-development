@@ -1,0 +1,6 @@
+4.5.2023 	 Route /api/hello not exists 
+----------------------------------
+4.5.2023 	 Id 40 not exists 
+----------------------------------
+4.5.2023 	 "name" length must be at least 2 characters long 
+----------------------------------

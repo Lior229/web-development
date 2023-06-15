@@ -1,0 +1,122 @@
+4.5.2023 	 Route /api/hello not exists 
+----------------------------------
+4.5.2023 	 Id 40 not exists 
+----------------------------------
+4.5.2023 	 "name" length must be at least 2 characters long 
+----------------------------------
+8.5.2023 	 "name" length must be at least 2 characters long 
+----------------------------------
+8.5.2023 	 "name" length must be at least 2 characters long 
+----------------------------------
+8.5.2023 	 "name" length must be at least 2 characters long 
+----------------------------------
+8.5.2023 	 Unauthorized 
+----------------------------------
+8.5.2023 	 Unauthorized 
+----------------------------------
+8.5.2023 	 Unauthorized 
+----------------------------------
+8.5.2023 	 Unauthorized 
+----------------------------------
+8.5.2023 	 Unauthorized 
+----------------------------------
+8.5.2023 	 Unauthorized 
+----------------------------------
+8.5.2023 	 Incorrect username or password 
+----------------------------------
+8.5.2023 	 Unauthorized 
+----------------------------------
+8.5.2023 	 "firstName" length must be less than or equal to 20 characters long 
+----------------------------------
+8.5.2023 	 username is already taken 
+----------------------------------
+11.5.2023 	 Unauthorized 
+----------------------------------
+11.5.2023 	 you are not authorized 
+----------------------------------
+11.5.2023 	 you are not authorized 
+----------------------------------
+11.5.2023 	 you are not authorized 
+----------------------------------
+11.5.2023 	 you are not authorized 
+----------------------------------
+11.5.2023 	 you are not authorized 
+----------------------------------
+11.5.2023 	 you are not authorized 
+----------------------------------
+11.5.2023 	 you are not authorized 
+----------------------------------
+11.5.2023 	 you are not authorized 
+----------------------------------
+11.5.2023 	 you are not authorized 
+----------------------------------
+11.5.2023 	 you are not authorized 
+----------------------------------
+11.5.2023 	 you are not authorized 
+----------------------------------
+11.5.2023 	 you are not authorized 
+----------------------------------
+11.5.2023 	 Unauthorized 
+----------------------------------
+11.5.2023 	 Unauthorized 
+----------------------------------
+11.5.2023 	 you are not authorized 
+----------------------------------
+11.5.2023 	 you are not authorized 
+----------------------------------
+11.5.2023 	 you are not authorized 
+----------------------------------
+11.5.2023 	 you are not authorized 
+----------------------------------
+11.5.2023 	 you are not authorized 
+----------------------------------
+11.5.2023 	 you are not authorized 
+----------------------------------
+11.5.2023 	 you are not authorized 
+----------------------------------
+11.5.2023 	 you are not authorized 
+----------------------------------
+11.5.2023 	 you are not authorized 
+----------------------------------
+11.5.2023 	 you are not authorized 
+----------------------------------
+11.5.2023 	 you are not authorized 
+----------------------------------
+11.5.2023 	 you are not authorized 
+----------------------------------
+11.5.2023 	 you are not authorized 
+----------------------------------
+11.5.2023 	 you are not authorized 
+----------------------------------
+11.5.2023 	 you are not authorized 
+----------------------------------
+11.5.2023 	 you are not authorized 
+----------------------------------
+11.5.2023 	 you are not authorized 
+----------------------------------
+11.5.2023 	 you are not authorized 
+----------------------------------
+11.5.2023 	 you are not authorized 
+----------------------------------
+11.5.2023 	 you are not authorized 
+----------------------------------
+11.5.2023 	 you are not authorized 
+----------------------------------
+11.5.2023 	 Route /api/books/sddasd not exists 
+----------------------------------
+11.5.2023 	 "username" length must be at least 2 characters long 
+----------------------------------
+11.5.2023 	 "name" is required 
+----------------------------------
+11.5.2023 	 "price" must be less than or equal to 100 
+----------------------------------
+11.5.2023 	 Route /favicon.ico not exists 
+----------------------------------
+11.5.2023 	 Route /api/products not exists 
+----------------------------------
+11.5.2023 	 Route /api/book not exists 
+----------------------------------
+11.5.2023 	 Route /api/products/images/undefined not exists 
+----------------------------------
+11.5.2023 	 Route /api/products/images/1c152a89-1994-456a-8203-4168b5c7b912.jpg not exists 
+----------------------------------

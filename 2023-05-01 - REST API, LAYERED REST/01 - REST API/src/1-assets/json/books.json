@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "Typescript is better then js",
+        "price": 150
+    },
+    {
+        "id": 2,
+        "name": "php is gone",
+        "price": 10000
+    },
+    {
+        "id": 3,
+        "name": "React for beginners",
+        "price": 11
+    },
+    {
+        "id": 4,
+        "name": "Angular for beginners",
+        "price": 200
+    }
+]

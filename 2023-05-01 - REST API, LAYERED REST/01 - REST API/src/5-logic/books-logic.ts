@@ -1,0 +1,99 @@
+import * as dal from '../2-utils/dal';
+import Book from '../4-models/Book';
+
+
+//Get all books
+
+export const getAllBooks = async ():Promise<Book[]> => {
+    // get all books from JSON file
+    return await dal.getAllBooks();
+}
+
+// Get one book
+export const getBookById = async (id:number):Promise<Book> => {
+    // get the books from the json file
+    const books = await dal.getAllBooks();
+
+    // find the desired book
+    const book = books.find((b) => b.id === id);
+
+    return book as Book;
+
+}
+
+// Add new book
+export const addBook = async (book:Book):Promise<Book> => {
+    // get the books from the json file
+    const books = await dal.getAllBooks();
+
+    //generate new id
+    book.id = books.length === 0 ? 1 : books[books.length - 1].id + 1;
+
+    // push the book into book array
+    books.push(book);
+
+    //write the array to the json file
+    await dal.saveAllBooks(books);
+
+    // return added book
+    return book;
+
+}
+
+// update existing book
+
+export const updateBook = async (book:Book):Promise<Book> => {
+    // get the books from the json file
+    const books = await dal.getAllBooks();
+
+    // find the index of the book
+    const index = books.findIndex((b) => b.id === book.id);
+
+    // update the book
+    books[index] = book;
+
+    // save books
+    await dal.saveAllBooks(books);
+
+    // return updated book
+    return book;
+}
+
+// update partial book
+export const updatePartialBook = async (book:Partial<Book>,id:number) => {
+    // get the books from the json file
+    const books = await dal.getAllBooks();
+
+    // find the index of the book
+    const index = books.findIndex((b) => b.id === id);
+
+    const prevBook =books[index];
+
+    // update the book
+    books[index] = {
+        ...prevBook,
+        ...book
+    }
+
+    // save books
+    await dal.saveAllBooks(books);
+
+    return true;
+}
+
+
+
+
+// delete the book
+export const deleteBook = async (id:number):Promise<void> => {
+    // get the books from the json file
+    const books = await dal.getAllBooks();
+
+    // find the index of the book
+    const index = books.findIndex((b) => b.id === id);
+
+    // delete the book
+    books.splice(index,1);
+
+    await dal.saveAllBooks(books);
+}
